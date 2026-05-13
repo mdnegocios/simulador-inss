@@ -80,14 +80,14 @@ svg {
 .brand {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 18px;
   min-width: 0;
 }
 
 .brand__logo {
   display: block;
-  width: 120px;
-  height: 36px;
+  width: 168px;
+  height: 58px;
   flex: 0 0 auto;
   object-fit: contain;
   object-position: center;
@@ -95,7 +95,7 @@ svg {
 
 .brand__copy {
   border-left: 1px solid var(--line);
-  padding-left: 14px;
+  padding-left: 18px;
 }
 
 .brand h1,
@@ -367,6 +367,15 @@ svg {
   .topbar__inner {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .brand {
+    gap: 12px;
+  }
+
+  .brand__logo {
+    width: 136px;
+    height: 47px;
   }
 
   .brand__copy {
