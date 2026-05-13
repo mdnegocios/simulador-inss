@@ -84,12 +84,20 @@ svg {
   min-width: 0;
 }
 
-.brand__logo {
-  width: 132px;
-  height: 44px;
+.brand__mark {
+  display: grid;
+  width: 40px;
+  height: 40px;
   flex: 0 0 auto;
-  object-fit: contain;
-  object-position: center;
+  place-items: center;
+  border-radius: var(--radius);
+  background: var(--primary);
+  color: white;
+}
+
+.brand__mark svg {
+  width: 26px;
+  height: 26px;
 }
 
 .brand__copy {
