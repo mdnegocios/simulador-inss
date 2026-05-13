@@ -86,11 +86,10 @@ svg {
 
 .brand__logo {
   display: block;
-  width: 148px;
-  height: 58px;
-  padding: 6px;
+  width: 170px;
+  height: 64px;
   flex: 0 0 auto;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
 }
 
@@ -375,9 +374,8 @@ svg {
   }
 
   .brand__logo {
-    width: 124px;
-    height: 49px;
-    padding: 5px;
+    width: 132px;
+    height: 50px;
   }
 
   .brand__copy {
