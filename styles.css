@@ -31,7 +31,7 @@ body {
   min-height: 100vh;
   background: var(--background);
   color: var(--foreground);
-  font-family: Rubik, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-feature-settings: "tnum", "cv02";
 }
 
@@ -86,8 +86,8 @@ svg {
 
 .brand__logo {
   display: block;
-  width: 168px;
-  height: 58px;
+  width: 142px;
+  height: 49px;
   flex: 0 0 auto;
   object-fit: contain;
   object-position: center;
@@ -374,8 +374,8 @@ svg {
   }
 
   .brand__logo {
-    width: 136px;
-    height: 47px;
+    width: 118px;
+    height: 41px;
   }
 
   .brand__copy {
