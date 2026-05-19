@@ -9,7 +9,6 @@ const el = {
   printButton: document.getElementById("printButton"),
   benefitBase: document.getElementById("benefitBase"),
   committedMargin: document.getElementById("committedMargin"),
-  limitWarning: document.getElementById("limitWarning"),
   newMargin: document.getElementById("newMargin"),
   availableMetric: document.getElementById("availableMetric"),
   availableMargin: document.getElementById("availableMargin"),
@@ -27,7 +26,7 @@ function bindEvents() {
   el.committedMargin.addEventListener("input", (event) => {
     const rawValue = parseCurrency(event.target.value);
     state.committedMarginTouched = event.target.value.replace(/\D/g, "").length > 0;
-    state.committedMargin = clampCommittedMargin(rawValue);
+    state.committedMargin = rawValue;
     render();
   });
 
@@ -52,7 +51,6 @@ function renderSummary(summary) {
   el.availableMargin.textContent = formatCurrency(summary.availableLoanMargin);
   el.availableMetric.classList.toggle("metric--success", summary.availableLoanMargin > 0);
   el.availableMetric.classList.toggle("metric--danger", summary.availableLoanMargin < 0);
-  el.limitWarning.hidden = !summary.exceedsLoanLimit;
 }
 
 function calculateSummary() {
@@ -60,33 +58,14 @@ function calculateSummary() {
   const totalNewMargin = state.benefitBase * 0.4;
   const rmcValue = state.benefitBase * 0.05;
   const rccValue = state.benefitBase * 0.05;
-  const loanLimit = state.benefitBase * 0.4;
-  const usedLoanMargin = committedMargin;
-  const exceedsLoanLimit = state.benefitBase > 0 && usedLoanMargin > loanLimit;
-  const effectiveUsedLoanMargin = state.benefitBase > 0 ? Math.min(usedLoanMargin, loanLimit) : usedLoanMargin;
-  const availableLoanMargin = totalNewMargin - rmcValue - rccValue - effectiveUsedLoanMargin;
+  const availableLoanMargin = totalNewMargin - committedMargin;
 
   return {
     totalNewMargin,
     rmcValue,
     rccValue,
-    loanLimit,
-    usedLoanMargin,
-    exceedsLoanLimit,
     availableLoanMargin,
-    effectiveUsedLoanMargin,
   };
-}
-
-function clampCommittedMargin(value) {
-  const summary = calculateSummary();
-  if (state.benefitBase <= 0) return value;
-  const maxAvailable = Math.max(0, summary.loanLimit);
-  if (value > maxAvailable) {
-    showToast(`Margem ajustada ao limite de ${formatCurrency(maxAvailable)}.`);
-    return maxAvailable;
-  }
-  return value;
 }
 
 function parseCurrency(value) {

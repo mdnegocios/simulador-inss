@@ -2,15 +2,18 @@
 
 Implementacao estatica de uma simulacao de margem consignavel INSS com:
 
-- base do beneficio;
-- RMC e RCC de 5%;
+- base do beneficio (salario);
+- RMC e RCC de 5% cada (aplicados automaticamente);
 - margem nova de 40%;
-- limite operacional de emprestimo em 40%;
-- UI simplificada: preencha apenas o salario (base) e a margem comprometida; RMC e RCC sao aplicados automaticamente (5% cada)
+- calculo: **Margem disponivel = Margem total nova (40%) - Margem comprometida com emprestimo**;
+- indicador visual: verde se margem disponivel > 0, vermelho se < 0;
 - salvamento local no navegador;
 - exportacao por impressao/PDF do navegador.
 
 ## Como usar
 
-Abra `index.html` no navegador. Nao ha etapa de build nem dependencias locais.
+Abra `index.html` no navegador. Preencha a base de calculo do beneficio e a margem comprometida com emprestimo. O resultado da margem disponivel aparecera em verde (sucesso) ou vermelho (margem insuficiente).
+
+Nao ha etapa de build nem dependencias locais.
+
 
