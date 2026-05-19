@@ -72,15 +72,7 @@
             <input id="benefitBase" inputmode="numeric" autocomplete="off" placeholder="R$ 0,00" />
           </label>
 
-          <label class="check">
-            <input id="hasRmc" type="checkbox" />
-            <span>Possui RMC (5%)</span>
-          </label>
-
-          <label class="check">
-            <input id="hasRcc" type="checkbox" />
-            <span>Possui RCC (5%)</span>
-          </label>
+          <!-- RMC e RCC aplicados automaticamente (5% cada) para manter a UI limpa -->
         </div>
 
         <div class="field-row">
@@ -90,21 +82,13 @@
           </label>
         </div>
         <p id="limitWarning" class="warning" hidden>
-          A margem comprometida excede 35% da base de calculo. O simulador considera o limite maximo.
+          A margem comprometida excede 40% da base de calculo. O simulador considera o limite maximo.
         </p>
 
         <div class="metric-grid">
           <article class="metric metric--primary">
             <span>Margem total nova (40%)</span>
             <strong id="newMargin">R$ 0,00</strong>
-          </article>
-          <article class="metric">
-            <span>Valor RMC</span>
-            <strong id="rmcValue">R$ 0,00</strong>
-          </article>
-          <article class="metric">
-            <span>Valor RCC</span>
-            <strong id="rccValue">R$ 0,00</strong>
           </article>
           <article id="availableMetric" class="metric metric--success">
             <span>Margem disponivel p/ emprestimo</span>
