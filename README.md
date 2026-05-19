@@ -13,6 +13,3 @@ Implementacao estatica de uma simulacao de margem consignavel INSS com:
 
 Abra `index.html` no navegador. Nao ha etapa de build nem dependencias locais.
 
-## Observacao
-
-Este projeto recria a logica operacional de margem em uma implementacao propria, sem copiar o bundle JavaScript ou os assets de marca do site original.
